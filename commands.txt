@@ -1,0 +1,13 @@
+docker build -f Dockerfile -t \
+  jeffreybbrown/org-roam:first . \
+  | tee logs/"build-log.`date`.txt"
+
+docker run -ti --name roam		\
+ -v /tmp/.X11-unix:/tmp/.X11-unix:ro	\
+ -e DISPLAY="unix$DISPLAY"		\
+ -e UNAME="emacser"			\
+ -e GNAME="emacsers"			\
+ -e UID="1000"				\
+ -e GID="1000"				\
+ -v /home/jeff/org/roam:/home/emacs	\
+ jare/emacs emacs
