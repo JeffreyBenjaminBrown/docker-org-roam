@@ -1,30 +1,21 @@
+# Some commands I use a lot.
+
 docker build -f Dockerfile -t \
-  jeffreybbrown/org-roam:with-emacs-packages . \
+  jeffreybbrown/org-roam:worked . \
   | tee logs/"build-log.`date`.txt"
 
-docker tag 31d427531ae4 \
-  jeffreybbrown/org-roam:first
+docker run -ti --name roam				\
+  -v /tmp/.X11-unix:/tmp/.X11-unix:ro			\
+  -e DISPLAY="unix$DISPLAY"				\
+  -e UNAME="emacser"					\
+  -e GNAME="emacsers"					\
+  -e UID="1000"						\
+  -e GID="1000"						\
+  -v /home/jeff/org/roam/mnt-data:/mnt/roam-data	\
+  -v /home/jeff/org/roam/mnt-misc:/mnt/misc		\
+  jeffreybbrown/org-roam:worked				\
+  bash
 
-# For Docker image `one-folder`
-docker run -ti --name roam		\
- -v /tmp/.X11-unix:/tmp/.X11-unix:ro	\
- -e DISPLAY="unix$DISPLAY"		\
- -e UNAME="emacser"			\
- -e GNAME="emacsers"			\
- -e UID="1000"				\
- -e GID="1000"				\
- -v /home/jeff/org/roam:/home/emacs	\
- jeffreybbrown/org-roam:one-folder	\
- emacs
+docker tag lalala \
+  jeffreybbrown/org-roam:nanana
 
-# For Docker image `with-emacs-packages`
-docker run -ti --name roam			\
- -v /tmp/.X11-unix:/tmp/.X11-unix:ro		\
- -e DISPLAY="unix$DISPLAY"			\
- -e UNAME="emacser"				\
- -e GNAME="emacsers"				\
- -e UID="1000"					\
- -e GID="1000"					\
- jeffreybbrown/org-roam:with-emacs-packages	\
- emacs
-#  -v /home/jeff/org/roam:/mnt/workspace		\

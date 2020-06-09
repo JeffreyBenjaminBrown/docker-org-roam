@@ -7,4 +7,11 @@ RUN apt update && apt install sqlite3 libsqlite3-dev
 RUN echo "apt-upgrading today, 2020-06-09" && \
     apt update && apt upgrade -y
 
-COPY .emacs.d /home/emacs/.emacs.d
+COPY .emacs .emacs.d /home/emacs/.emacs.d/
+
+RUN mkdir /mnt/roam-data && \
+    mkdir /mnt/misc
+
+# Why doesn't this work? I still begin in /mnt/workspace
+RUN rmdir /mnt/workspace
+WORKDIR "/mnt"
