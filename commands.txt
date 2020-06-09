@@ -1,10 +1,11 @@
 docker build -f Dockerfile -t \
-  jeffreybbrown/org-roam:first . \
+  jeffreybbrown/org-roam:with-emacs-packages . \
   | tee logs/"build-log.`date`.txt"
 
 docker tag 31d427531ae4 \
   jeffreybbrown/org-roam:first
 
+# For Docker image `one-folder`
 docker run -ti --name roam		\
  -v /tmp/.X11-unix:/tmp/.X11-unix:ro	\
  -e DISPLAY="unix$DISPLAY"		\
@@ -13,4 +14,17 @@ docker run -ti --name roam		\
  -e UID="1000"				\
  -e GID="1000"				\
  -v /home/jeff/org/roam:/home/emacs	\
- jare/emacs emacs
+ jeffreybbrown/org-roam:one-folder	\
+ emacs
+
+# For Docker image `with-emacs-packages`
+docker run -ti --name roam			\
+ -v /tmp/.X11-unix:/tmp/.X11-unix:ro		\
+ -e DISPLAY="unix$DISPLAY"			\
+ -e UNAME="emacser"				\
+ -e GNAME="emacsers"				\
+ -e UID="1000"					\
+ -e GID="1000"					\
+ jeffreybbrown/org-roam:with-emacs-packages	\
+ emacs
+#  -v /home/jeff/org/roam:/mnt/workspace		\
