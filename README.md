@@ -13,7 +13,7 @@ docker run -ti --name roam							\
   -e GID="1000"										\
   -v /home/jeff/org/roam/mnt-data:/mnt/roam-data	\
   -v /home/jeff/org/roam/mnt-misc:/mnt/misc			\
-  jeffreybbrown/org-roam:worked						\
+  jeffreybbrown/org-roam:latest						\
   bash
 ```
 
