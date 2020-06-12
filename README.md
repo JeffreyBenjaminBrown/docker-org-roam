@@ -47,7 +47,7 @@ Then install `use-package` and `org-roam`:
 ```
 `M-x package-list-packages`
 `M-x package-refresh`
-<mark them for installation with `i`> 
+<mark them for installation with `i`>
 <install them with `x`>
 ```
 
