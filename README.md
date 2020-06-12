@@ -74,6 +74,8 @@ Last, on the host system, remove `.emacs.d/elpa/gnupg`, because it has symlinks 
 
 # Known problems
 
+## Your terminal might interpret a few rare key commands differently
+
 This runs Emacs from inside a console session. This might lead key commands to behave strangely. For instance, in my case, Emacs in a Docker container in a Konsole session interprets `C-<page down>` differently than Emacs on my native system (NixOS).
 
-https://org-roam.discourse.group/t/theres-a-docker-image-available/331/2?u=jeffbrown
+This might be solvable by using `ssh` to sidestep X11 issues, if I understand correctly [someone on the `org-roam` Discourse](https://org-roam.discourse.group/t/theres-a-docker-image-available/331/2?u=jeffbrown).
