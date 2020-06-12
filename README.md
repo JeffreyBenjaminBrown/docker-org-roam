@@ -71,3 +71,9 @@ Then append some code to `init.el` and reload it:
 Then exit Emacs and copy `emacs` and `.emacs.d` from the Docker container to the host system.
 
 Last, on the host system, remove `.emacs.d/elpa/gnupg`, because it has symlinks and it's easily regenerated.
+
+# Known problems
+
+This runs Emacs from inside a console session. This might lead key commands to behave strangely. For instance, in my case, Emacs in a Docker container in a Konsole session interprets `C-<page down>` differently than Emacs on my native system (NixOS).
+
+https://org-roam.discourse.group/t/theres-a-docker-image-available/331/2?u=jeffbrown

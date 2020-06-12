@@ -1,7 +1,7 @@
-# Some commands I use a lot.
+# These are some commands I use a lot.
 
 docker build -f Dockerfile -t \
-  jeffreybbrown/org-roam:worked . \
+  jeffreybbrown/org-roam:testing . \
   | tee logs/"build-log.`date`.txt"
 
 docker run -ti --name roam				\
@@ -13,7 +13,7 @@ docker run -ti --name roam				\
   -e GID="1000"						\
   -v /home/jeff/org/roam/mnt-data:/mnt/roam-data	\
   -v /home/jeff/org/roam/mnt-misc:/mnt/misc		\
-  jeffreybbrown/org-roam:worked				\
+  jeffreybbrown/org-roam:personal			\
   bash
 
 docker tag lalala \
