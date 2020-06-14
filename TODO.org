@@ -1,0 +1,3 @@
+* To upgrade to org-roam version 1.2
+
+Run the container. Delete the previous org-roam folder at `/home/emacs/.emacs.d/org-roam*`. Run Emacs. Use package-install-packages to install the latest org-roam. If it's not there, make sure melpa-stable and melpa are both made available by init.el. Once it's installed, copy the .emacs.d folder to the host system, replacing the existing .emacs.d folder in this repository. Then delete the package (if I recall correctly) gnugpg, which contains some symlinks and which Emacs can easily recreate. Finally rebuild the docker image.

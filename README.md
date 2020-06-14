@@ -1,5 +1,9 @@
 This builds a Docker container that lets you run [org-roam](https://org-roam.readthedocs.io/) in [Emacs](https://www.gnu.org/software/emacs/).
 
+# WARNING: This is old
+
+This uses org-roam version 1.1. I made it because I couldn't install org-roam natively on NixOS. Now I'm able to, so I don't use this anymore. If you really need version 1.2, let me know and I can upgrade it. Barring that, you can do it yourself -- see [TODO.org](TODO.org) for how.
+
 # How to use it
 
 There are other ways to run it; here's what I do:
